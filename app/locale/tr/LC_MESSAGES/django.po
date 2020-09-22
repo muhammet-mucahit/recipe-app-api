@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-20 10:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: app/settings.py:118
+msgid "English"
+msgstr "İngilizce"
+
+#: app/settings.py:119
+msgid "Turkish"
+msgstr "Türkçe"
+
+#: core/admin.py:24
+msgid "Personal Info"
+msgstr "Kişisel Bilgi"
+
+#: core/admin.py:30
+msgid "Permissions"
+msgstr "İzinler"
+
+#: core/admin.py:36
+msgid "Important Dates"
+msgstr "Önemli Tarihler"
+
+#: core/apps.py:7
+msgid "Core"
+msgstr "Çekirdek"
+
+#: core/managers.py:9
+msgid "Users must have an email address"
+msgstr "Kullanıcıların e-posta adresi olmak zorundadır"
+
+#: core/models.py:11
+msgid "email address"
+msgstr "e-posta adresi"
+
+#: core/models.py:12
+msgid "first name"
+msgstr "isim"
+
+#: core/models.py:13
+msgid "last name"
+msgstr "soyisim"
+
+#: core/models.py:15
+msgid "active"
+msgstr "aktif"
+
+#: core/models.py:18
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: core/models.py:23
+msgid "staff status"
+msgstr "görevli durumu"
+
+#: core/models.py:26
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: core/models.py:28
+msgid "date joined"
+msgstr "Katılma tarihi"
