@@ -20,8 +20,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
-    path('api/user/', include('user.urls')),
-    path('api/recipe/', include('recipe.urls')),
+    path('api/users/', include('user.urls')),
+    path('api/recipes/', include('recipe.urls')),
 ]
 
 urlpatterns += i18n_patterns(
