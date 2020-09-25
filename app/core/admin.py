@@ -3,11 +3,9 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
-User = get_user_model()
+from core import models
 
-# admin.site.index_title = _('My Index Title')
-# admin.site.site_header = _('My Site Administration')
-# admin.site.site_title = _('My Site Management')
+User = get_user_model()
 
 
 class UserAdmin(BaseUserAdmin):
@@ -51,3 +49,4 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
+admin.site.register(models.Tag)
