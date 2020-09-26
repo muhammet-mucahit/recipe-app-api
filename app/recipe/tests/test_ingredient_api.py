@@ -21,7 +21,7 @@ class PublicIngredientsApiTestCase(TestCase):
         self.client = APIClient()
 
     def test_login_required(self):
-        """Test that login is required for retrieving tags"""
+        """Test that login is required for retrieving ingredients"""
         res = self.client.get(INGREDIENTS_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
@@ -38,8 +38,8 @@ class PrivateIngredientsApiTestCase(TestCase):
         self.client = APIClient()
         self.client.force_authenticate(self.user)
 
-    def test_retrieve_tags(self):
-        """Test retrieving tags"""
+    def test_retrieve_ingredients(self):
+        """Test retrieving test_retrieve_ingredients"""
         Ingredient.objects.create(user=self.user, name='Cucumber')
         Ingredient.objects.create(user=self.user, name='Yogurt')
 
@@ -51,7 +51,7 @@ class PrivateIngredientsApiTestCase(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, serializer.data)
 
-    def test_tags_limited_to_user(self):
+    def test_ingredients_limited_to_user(self):
         """Test that ingredients returned are for the authenticated user"""
         user2 = User.objects.create(
             email='test2@example.com',
@@ -62,8 +62,10 @@ class PrivateIngredientsApiTestCase(TestCase):
 
         res = self.client.get(INGREDIENTS_URL)
 
-        tags = Ingredient.objects.filter(user=self.user).order_by('-name')
-        serializer = IngredientSerializer(tags, many=True)
+        ingredients = Ingredient.objects.filter(
+            user=self.user
+        ).order_by('-name')
+        serializer = IngredientSerializer(ingredients, many=True)
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(len(res.data), 1)
@@ -82,7 +84,7 @@ class PrivateIngredientsApiTestCase(TestCase):
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
         self.assertTrue(exists)
 
-    def test_create_tag_invalid(self):
+    def test_create_ingredient_invalid(self):
         """Test creating a new ingredient with invalid payload"""
         ingredient_data = {'name': ''}
         res = self.client.post(INGREDIENTS_URL, data=ingredient_data)
